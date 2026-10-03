@@ -3,7 +3,7 @@
 // record written before there was one. Nothing here opens a wallet or a
 // socket; the live path is proven by css-live.mjs beside this file.
 //
-//   node --test   (from packages/css-nextgraph, after npm run build)
+//   node --test   (after npm run build)
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';

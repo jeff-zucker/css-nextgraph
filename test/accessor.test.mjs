@@ -3,7 +3,7 @@
 // two documents. Nothing here opens a socket or loads the SDK; the live
 // behaviour is proven by css-live.mjs beside this file.
 //
-//   node --test   (from packages/css-nextgraph, after npm run build)
+//   node --test   (after npm run build)
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { DataFactory, Store } from 'n3';

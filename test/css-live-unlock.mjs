@@ -3,8 +3,11 @@
 // wiring (the key component, the handler in the waterfall) that the offline
 // tests cannot see.
 //
-//   cd claude/validation/nextgraph-spike && ./ngd.sh start
-//   node packages/css-nextgraph/test/css-live-unlock.mjs
+//   (cd ../FediPod/claude/validation/nextgraph-spike && ./ngd.sh start)
+//   node test/css-live-unlock.mjs
+//
+// The spike's daemon and its idp-grant helper live in a FediPod checkout
+// beside this repository; FEDIPOD_CHECKOUT names one elsewhere.
 //
 // The daemon, its log and its control script stay in the spike directory.
 import fs from 'node:fs';
@@ -16,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const REPO = path.resolve(PKG, '../..');
+const REPO = process.env.FEDIPOD_CHECKOUT || path.resolve(PKG, '../FediPod');
 const SPIKE = path.join(REPO, 'claude/validation/nextgraph-spike');
 const { AppRunner } = require(path.join(PKG, 'node_modules/@solid/community-server'));
 const { mintCredential, createGrantSession } = require(path.join(REPO, 'vendor/idp-grant.cjs'));

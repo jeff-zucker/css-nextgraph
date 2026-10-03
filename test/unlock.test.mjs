@@ -2,7 +2,7 @@
 // socket: the handler is driven with the request and response shapes CSS hands
 // it, so what is asserted is what a person gets back.
 //
-//   node --test   (from packages/css-nextgraph, after npm run build)
+//   node --test   (after npm run build)
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { Readable } from 'node:stream';

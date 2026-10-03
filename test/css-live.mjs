@@ -5,8 +5,11 @@
 // lists the container, refuses foreign triples, deletes, then stops the
 // server, restarts the daemon, boots the server again and reads it all back.
 //
-//   cd claude/validation/nextgraph-spike && ./ngd.sh start
-//   node packages/css-nextgraph/test/css-live.mjs
+//   (cd ../FediPod/claude/validation/nextgraph-spike && ./ngd.sh start)
+//   node test/css-live.mjs
+//
+// The spike's daemon and its idp-grant helper live in a FediPod checkout
+// beside this repository; FEDIPOD_CHECKOUT names one elsewhere.
 //
 // The daemon, its log and its control script stay in the spike directory; SPIKE
 // below is where they are.
@@ -19,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const REPO = path.resolve(PKG, '../..');
+const REPO = process.env.FEDIPOD_CHECKOUT || path.resolve(PKG, '../FediPod');
 const SPIKE = path.join(REPO, 'claude/validation/nextgraph-spike');
 const { AppRunner } = require(path.join(PKG, 'node_modules/@solid/community-server'));
 const { Parser, Store } = require(path.join(PKG, 'node_modules/n3'));

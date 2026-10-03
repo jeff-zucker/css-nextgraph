@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "description": "A Community Solid Server storage component that keeps every pod in NextGraph, encrypted under a wallet of its own.",
   "license": "MIT",
+  "author": "Jeff Zucker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeff-zucker/css-nextgraph.git"
+  },
+  "homepage": "https://github.com/jeff-zucker/css-nextgraph#readme",
+  "bugs": "https://github.com/jeff-zucker/css-nextgraph/issues",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
